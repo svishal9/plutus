@@ -1,14 +1,11 @@
 try:
-    from read_tax_slab import ReadTaxFile as ReadTaxFile
+    from read_tax_slab import ReadTaxFile
 except ModuleNotFoundError:
-    from .read_tax_slab import ReadTaxFile as ReadTaxFile
+    from .read_tax_slab import ReadTaxFile
 
-
-
-def GetAnnualTax( annualIncome ):
-
+def GetAnnualTax(annualIncome):
     annualTaxPayable = []
-    maxTaxSlabIncome,maxTaxSlabRate, taxSlabRanges = ReadTaxFile()
+    maxTaxSlabIncome, maxTaxSlabRate, taxSlabRanges = ReadTaxFile()
     for taxSlab in taxSlabRanges:
         if all([annualIncome > taxSlab[0], annualIncome > taxSlab[1]]):
             annualTaxPayable.append((taxSlab[1] - taxSlab[0]) * taxSlab[2] / 100)

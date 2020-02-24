@@ -1,4 +1,4 @@
-def CalculateNetMonthlyIncome(grossMonthlyIncome,netMonthlyTax):
+def CalculateNetMonthlyIncome(grossMonthlyIncome, netMonthlyTax):
     return int(grossMonthlyIncome-netMonthlyTax)
 
 def CalculateGrossMonthlyIncome(grossAnnualIncome):
@@ -7,8 +7,8 @@ def CalculateGrossMonthlyIncome(grossAnnualIncome):
 def CalculateNetMonthlyTax(annualTaxToBePaid):
     return int(annualTaxToBePaid/12)
 
-def SalaryDetails(grossAnnualIncome,annualTaxToBePaid):
-    grossMonthlySalary=CalculateGrossMonthlyIncome(grossAnnualIncome)
-    monthlyTaxPayable=CalculateNetMonthlyTax(annualTaxToBePaid)
-    netMonthlySalary=CalculateNetMonthlyIncome(grossMonthlySalary,monthlyTaxPayable)
-    return grossMonthlySalary,monthlyTaxPayable,netMonthlySalary
+def SalaryDetails(grossAnnualIncome, annualTaxToBePaid):
+    grossMonthlySalary = CalculateGrossMonthlyIncome(grossAnnualIncome)
+    monthlyTaxPayable = CalculateNetMonthlyTax(annualTaxToBePaid)
+    netMonthlySalary = CalculateNetMonthlyIncome(grossMonthlySalary, monthlyTaxPayable)
+    return grossMonthlySalary, monthlyTaxPayable, netMonthlySalary

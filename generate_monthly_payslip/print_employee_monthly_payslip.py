@@ -6,7 +6,7 @@ class Employee:
         self.__employeeNetMonthlySalary = netMonthlySalary
 
     def PrintEmployeePayslip(self):
-        payslipOutputMessage='Monthly Payslip for: "' + self.__employeeFullName + '"\n'
+        payslipOutputMessage = 'Monthly Payslip for: "' + self.__employeeFullName + '"\n'
         payslipOutputMessage += 'Gross Monthly Income: $' + str(self.__employeeGrossMonthlySalary) + '\n'
         payslipOutputMessage += 'Monthly Income Tax: $' + str(self.__employeeNetMonthlyTaxPayable) + '\n'
         payslipOutputMessage += 'Net Monthly Income: $' + str(self.__employeeNetMonthlySalary)
