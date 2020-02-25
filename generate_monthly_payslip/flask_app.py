@@ -1,6 +1,6 @@
 import flask
 from flask import request
-from app import Run as PayslipApp
+from generate_monthly_payslip.app import Run as PayslipApp
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True

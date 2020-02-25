@@ -1,9 +1,21 @@
 import argparse
 import logging
-from calculate_annual_tax import GetAnnualTax
-from calculate_net_monthly_income_details import SalaryDetails
-from print_employee_monthly_payslip import Employee
-import logging_config
+try:
+    from calculate_annual_tax import GetAnnualTax
+except ModuleNotFoundError:
+    from generate_monthly_payslip.calculate_annual_tax import GetAnnualTax
+try:
+    from calculate_net_monthly_income_details import SalaryDetails
+except ModuleNotFoundError:
+    from generate_monthly_payslip.calculate_net_monthly_income_details import SalaryDetails
+try:
+    from print_employee_monthly_payslip import Employee
+except ModuleNotFoundError:
+    from generate_monthly_payslip.print_employee_monthly_payslip import Employee
+try:
+    import logging_config
+except ModuleNotFoundError:
+    import generate_monthly_payslip.logging_config
 
 
 log = logging.getLogger('generate_monthly_payslip.app')
