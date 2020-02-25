@@ -1,5 +1,5 @@
 import csv
-import os
+from pathlib import Path
 
 def ValidateEachTaxSlab(eachTaxSlabRow):
     assert isinstance(int(eachTaxSlabRow[0]), int) and isinstance(int(eachTaxSlabRow[1]), int) and isinstance(int(eachTaxSlabRow[2]), int), 'All data in Tax Slab file should be int apart from header row'
@@ -23,7 +23,7 @@ def GetCsvFilenameFromConfigFile():
         return configFile.readline().split('=')[1]
 
 def ReadTaxFile():
-    inputStaticTaxSlabFile = os.getcwd() + '/generate_monthly_payslip/static_input/tax_slab.csv'
+    inputStaticTaxSlabFile = Path(__file__).parent / "static_input/tax_slab.csv"
     tax_slab_rate_list = []
     maxSlabAnnualIncome = 0
     maxSlabTaxRate = 0
@@ -33,7 +33,8 @@ def ReadTaxFile():
     try:
         with open(inputStaticTaxSlabFile) as csvfile:
             csv_file = csv.reader(csvfile)
-            header = next(csv_file)
+            # header = next(csv_file)
+            next(csv_file)
             taxSlab = csv_file
             for taxSlabRow in taxSlab:
                 if taxSlabRow[1] == '-1':

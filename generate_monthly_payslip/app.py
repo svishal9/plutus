@@ -37,7 +37,7 @@ def Run(employeeFullName, grossAnnualSalaryInput):
     log.debug('Instantiating Employee object')
     employeeSelected = Employee(employeeFullName, grossMonthlySalary, monthlyTaxPayable, netMonthlySalary)
     log.debug('Printing Payslip')
-    employeeSelected.PrintEmployeePayslip()
+    return employeeSelected.PrintEmployeePayslip()
 
 if __name__ == '__main__':
     log.info('Welcome to the world of "Plutus". Starting payslip generator application.')
