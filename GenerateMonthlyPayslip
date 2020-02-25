@@ -1,0 +1,11 @@
+#!/bin/bash
+fullName=$1
+sal=$2
+formatfullname="${fullName// /%20}"
+url="http://127.0.0.1:5000/api/v1/resources/employee?fullName=${formatfullname}&grossAnnualIncome=$sal"
+# urlpart2="&grossAnnualIncome=$2"
+# url=$urlpart1$formatfullname$urlpart2
+# echo $urlpart1
+# echo $urlpart2
+# echo $url
+curl $url
