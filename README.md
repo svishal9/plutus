@@ -1,6 +1,6 @@
 # Plutus
 
-### Note: This file is not formatted in interest of time. Please use Readme.docx file for reader friendly version. This file exists as best practice and will be modified later. 
+### Note: This file is not formatted in interest of time. Please use readme.docx file for reader friendly version. This file exists as best practice and will be modified later. 
 
 Name of Project	: Plutus
 
